@@ -3,15 +3,14 @@ pipeline {
 	stages {
 		stage ('Unit Test') {
 			steps{
-				git url:'https://github.com/nanju90/FR_CI_CD.git; branch : master'
-				sh "mvn  -f pom.xml clean verify"
+				echo "Unit Test Stage"
 				checkpoint "Unit Test Complete"
 			}
 		}
 		stage ('Build') {
 			steps{	
 				sh """
-				mvn pom.xml package
+				mvn -version
 				"""
 				checkpoint "Unit Test Complete"
 				}
