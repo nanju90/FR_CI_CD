@@ -8,9 +8,7 @@ pipeline {
 		}
 		stage ('Build') {
 			steps{	
-				sh """
-				mvn -version
-				"""
+				echo "Building..."
 			}
 		}
 		stage ('Publish to Nexus') {
