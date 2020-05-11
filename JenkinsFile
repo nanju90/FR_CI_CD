@@ -4,7 +4,7 @@ pipeline {
 		stage ('Unit Test') {
 			steps{
 				echo "Unit Test Stage"
-				checkpoint "Unit Test Complete"
+			Checkpoint "Unit Test Complete"
 			}
 		}
 		stage ('Build') {
@@ -12,25 +12,25 @@ pipeline {
 				sh """
 				mvn -version
 				"""
-				checkpoint "Unit Test Complete"
+				Checkpoint "Unit Test Complete"
 				}
 		}
 		stage ('Publish to Nexus') {
 			steps{
 				echo "Publlish stage"
-				checkpoint "Unit Test Complete"
+				Checkpoint "Unit Test Complete"
 			}
 		}
 		stage ('Deploy to DEV/QA') {
 			steps{
 				echo "Deploying to Dev/Qa"
-				checkpoint "Unit Test Complete"
+				Checkpoint "Unit Test Complete"
 			}
 		}
 		stage ('Release to Nexus') {
 			steps{
 				echo "Publishing to release repo"
-				checkpoint "Unit Test Complete"
+				Checkpoint "Unit Test Complete"
 			}
 		}
 		
