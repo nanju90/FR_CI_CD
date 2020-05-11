@@ -1,0 +1,39 @@
+pipeline {
+	agent any
+	stages {
+		stage ('Unit Test') {
+			steps{
+				git url:'https://github.com/nanju90/FR_CI_CD.git; branch : master'
+				sh "mvn  -f pom.xml clean verify"
+				checkpoint "Unit Test Complete"
+			}
+		}
+		stage ('Build') {
+			steps{	
+				sh """
+				mvn pom.xml package
+				"""
+				checkpoint "Unit Test Complete"
+				}
+		}
+		stage ('Publish to Nexus') {
+			steps{
+				echo "Publlish stage"
+				checkpoint "Unit Test Complete"
+			}
+		}
+		stage ('Deploy to DEV/QA') {
+			steps{
+				echo "Deploying to Dev/Qa"
+				checkpoint "Unit Test Complete"
+			}
+		}
+		stage ('Release to Nexus') {
+			steps{
+				echo "Publishing to release repo"
+				checkpoint "Unit Test Complete"
+			}
+		}
+		
+	}
+}
