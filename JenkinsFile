@@ -3,7 +3,9 @@ pipeline {
 	stages {
 		stage ('Unit Test') {
 			steps{
+				{
 				git url:'https://github.com/nanju90/FR_CI_CD.git: branch:master'
+				}
 				{
 				bat'mvn clean verify'
 				}
