@@ -8,8 +8,9 @@ pipeline {
 		}
 		stage ('Build') {
 			steps{	
-				 withMaven(maven : 'Maven3.6')
-                		 bat'mvn clean compile'
+				 withMaven(maven : 'Maven3.6'){
+                		 	bat'mvn clean compile'
+				 }
 			}
 		}
 		stage ('Publish to Nexus') {
