@@ -3,8 +3,11 @@ pipeline {
 	stages {
 		stage ('Unit Test') {
 			steps{
+				bat'''
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/nanju90/FR_CI_CD.git']]])
-			}
+				mvn clean verify
+				'''
+	              		}
 		}
 		stage ('Build') {
 			steps{	
