@@ -7,7 +7,7 @@ pipeline {
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/nanju90/FR_CI_CD.git']]])
 				mvn clean verify
 				'''
-				Checkpoint"Unit Test Complete"
+				checkpoint "Unit Test Complete"
 	              		}
 		}
 		stage ('Build') {
