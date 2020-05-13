@@ -121,14 +121,6 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
 				<version>3.1.0</version>
-				<executions>
-				  <execution>
-				    <id>released-version</id>
-				    <goals>
-				      <goal>released-version</goal>
-				    </goals>
-				  </execution>
-				</executions>
 		      </plugin>
 			
 			<plugin>
