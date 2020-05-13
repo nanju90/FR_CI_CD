@@ -23,7 +23,7 @@ pipeline {
 		}
 		stage ('Deploy to DEV/QA') {
 			steps{
-				echo "Deploying to Dev/Qa"
+				echo "Deploying to Dev/Qa!!!!"
 			}
 		}
 		stage ('Release to Nexus!!!!') {
