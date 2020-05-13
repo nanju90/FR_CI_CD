@@ -123,9 +123,9 @@
 				<version>3.1.0</version>
 				<executions>
 				  <execution>
-				    <id>parse-version</id>
+				    <id>released-version</id>
 				    <goals>
-				      <goal>parse-version</goal>
+				      <goal>released-version</goal>
 				    </goals>
 				  </execution>
 				</executions>
